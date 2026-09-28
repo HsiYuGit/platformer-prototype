@@ -1,0 +1,7 @@
+{
+  "baseline:0": [
+    {"move_right": true, "x": 485},
+    {"move_right": true, "jump": true, "frames": 43},
+    {"move_right": true, "frames": 170}
+  ]
+}

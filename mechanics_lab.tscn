@@ -1,27 +1,5 @@
-[gd_scene format=3 uid="uid://dml7lbmpunecl"]
+[gd_scene load_steps=2 format=3 uid="uid://dml7lbmpunecl"]
+[ext_resource type="Script" path="res://lab.gd" id="1"]
+[node name="MovementLab" type="Node2D"]
+script = ExtResource("1")
 
-[ext_resource type="PackedScene" uid="uid://b4olkdy5o4t51" path="res://player.tscn" id="1_0qr2m"]
-[ext_resource type="Script" uid="uid://qqd7ajq1gfa7" path="res://player.gd" id="2_eoc1p"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w35pe"]
-size = Vector2(200, 10)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_eoc1p"]
-size = Vector2(200, 10)
-
-[node name="MechanicsLab" type="Node2D" unique_id=1754435652]
-
-[node name="Player" parent="." unique_id=1514673306 instance=ExtResource("1_0qr2m")]
-script = ExtResource("2_eoc1p")
-
-[node name="Floor2" type="StaticBody2D" parent="." unique_id=176969275]
-position = Vector2(327, 587)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2" unique_id=1363534339]
-shape = SubResource("RectangleShape2D_w35pe")
-
-[node name="Floor" type="StaticBody2D" parent="." unique_id=1027021618]
-position = Vector2(94, 647)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=621546964]
-shape = SubResource("RectangleShape2D_eoc1p")
