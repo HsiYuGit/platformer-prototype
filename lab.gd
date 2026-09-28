@@ -3,7 +3,7 @@ extends Node2D
 const PLAYER = preload("res://player.tscn")
 const ROOM = preload("res://room.gd")
 const BASELINE = preload("res://levels/baseline.gd")
-const LEVELS: Array = []
+const LEVELS: Array = [preload("res://levels/dash.gd")]
 
 var ui: Control
 var world: Node2D
@@ -18,6 +18,8 @@ var elapsed := 0.0
 var records: Dictionary = {}
 var status_label: Label
 var result_label: Label
+var dash_charges_override := 0
+var dash_air_override := -1
 
 func _ready() -> void:
 	preload("res://player.gd").configure_input()
@@ -83,6 +85,8 @@ func start_course(entry, room_index: int) -> void:
 	section = room_index
 	skill_enabled = true
 	failures = 0
+	dash_charges_override = 0
+	dash_air_override = -1
 	load_room()
 
 func load_room() -> void:
@@ -91,6 +95,11 @@ func load_room() -> void:
 	completed = false
 	elapsed = 0.0
 	var spec: Dictionary = course.rooms()[section]
+	if course.ID == "dash":
+		if dash_charges_override > 0:
+			spec["dash_charges"] = dash_charges_override
+		if dash_air_override >= 0:
+			spec["dash_air_only"] = bool(dash_air_override)
 	world = ROOM.new()
 	add_child(world)
 	world.build(spec)
@@ -128,6 +137,8 @@ func next_room() -> void:
 	if section + 1 < course.rooms().size():
 		section += 1
 		failures = 0
+		dash_charges_override = 0
+		dash_air_override = -1
 		load_room()
 	else:
 		show_hub()
@@ -148,6 +159,14 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		retry()
 	elif event.is_action_pressed("compare"):
 		toggle_skill()
+	elif course.ID == "dash" and event.physical_keycode == KEY_C:
+		dash_charges_override = int(world.data["dash_charges"]) % 3 + 1
+		failures = 0
+		load_room()
+	elif course.ID == "dash" and event.physical_keycode == KEY_V:
+		dash_air_override = 0 if world.data["dash_air_only"] else 1
+		failures = 0
+		load_room()
 	elif completed and event.is_action_pressed("next_room"):
 		next_room()
 	elif event.physical_keycode >= KEY_F1 and event.physical_keycode <= KEY_F3:
@@ -155,6 +174,8 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		if index < course.rooms().size():
 			section = index
 			failures = 0
+			dash_charges_override = 0
+			dash_air_override = -1
 			load_room()
 
 func _physics_process(delta: float) -> void:
@@ -172,7 +193,7 @@ func _physics_process(delta: float) -> void:
 		completed = true
 		player.set_physics_process(false)
 		var key := "%s:%d" % [course.ID, section]
-		if skill_enabled:
+		if skill_enabled and dash_charges_override == 0 and dash_air_override == -1:
 			records[key] = minf(records.get(key, INF), elapsed)
 		result_label.text = "CLEAR!  %.1fs / %d retries   |   ENTER: %s   R: replay   ESC: hub" % [elapsed, failures, "next checkpoint" if section + 1 < course.rooms().size() else "return to hub"]
 

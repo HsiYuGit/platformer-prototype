@@ -47,6 +47,8 @@ func run() -> void:
 						break
 				if lab.completed or lab.failures > 0:
 					break
+				if OS.get_environment("LAB_TRACE") == "1":
+					print("TRACE %s %s -> %s" % [key, step, lab.player.position])
 			set_inputs({})
 			if not lab.completed or lab.failures > 0:
 				printerr("FAIL %s: pos=%s retries=%s" % [key, lab.player.position, lab.failures])

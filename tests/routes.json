@@ -1,7 +1,132 @@
 {
   "baseline:0": [
-    {"move_right": true, "x": 485},
-    {"move_right": true, "jump": true, "frames": 43},
-    {"move_right": true, "frames": 170}
+    {
+      "move_right": true,
+      "x": 485
+    },
+    {
+      "move_right": true,
+      "jump": true,
+      "frames": 43
+    },
+    {
+      "move_right": true,
+      "frames": 170
+    }
+  ],
+  "dash:0": [
+    {
+      "x": 337,
+      "move_right": true
+    },
+    {
+      "frames": 18,
+      "move_right": true,
+      "jump": true
+    },
+    {
+      "frames": 13,
+      "skill": true,
+      "move_right": true,
+      "jump": true
+    },
+    {
+      "frames": 170,
+      "move_right": true
+    }
+  ],
+  "dash:1": [
+    {
+      "x": 277,
+      "move_right": true
+    },
+    {
+      "move_right": true,
+      "jump": true,
+      "frames": 18
+    },
+    {
+      "move_right": true,
+      "jump": true,
+      "skill": true,
+      "frames": 13
+    },
+    {
+      "move_right": true,
+      "jump": true,
+      "frames": 5
+    },
+    {
+      "move_right": true,
+      "jump": true,
+      "skill": true,
+      "frames": 13
+    },
+    {
+      "land": true,
+      "move_right": true
+    },
+    {
+      "x": 812,
+      "move_right": true
+    },
+    {
+      "move_right": true,
+      "jump": true,
+      "frames": 18
+    },
+    {
+      "move_right": true,
+      "jump": true,
+      "skill": true,
+      "frames": 13
+    },
+    {
+      "frames": 120,
+      "move_right": true
+    }
+  ],
+  "dash:2": [
+    {
+      "x": 257,
+      "move_right": true
+    },
+    {
+      "frames": 18,
+      "move_right": true,
+      "jump": true
+    },
+    {
+      "frames": 13,
+      "skill": true,
+      "move_right": true,
+      "jump": true
+    },
+    {
+      "frames": 5,
+      "move_right": true,
+      "jump": true
+    },
+    {
+      "frames": 13,
+      "skill": true,
+      "move_right": true,
+      "jump": true
+    },
+    {
+      "frames": 5,
+      "move_right": true,
+      "jump": true
+    },
+    {
+      "frames": 13,
+      "skill": true,
+      "move_right": true,
+      "jump": true
+    },
+    {
+      "frames": 170,
+      "move_right": true
+    }
   ]
 }
