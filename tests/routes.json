@@ -128,5 +128,62 @@
       "frames": 170,
       "move_right": true
     }
+  ],
+  "double_jump:0": [
+    {
+      "x": 365,
+      "move_right": true
+    },
+    {
+      "frames": 22,
+      "jump": true,
+      "move_right": true
+    },
+    {
+      "skill": true,
+      "jump": true,
+      "frames": 34,
+      "move_right": true
+    },
+    {
+      "frames": 180,
+      "move_right": true
+    }
+  ],
+  "double_jump:1": [
+    {
+      "x": 337,
+      "move_right": true
+    },
+    {
+      "frames": 31,
+      "jump": true,
+      "move_right": true
+    },
+    {
+      "skill": true,
+      "jump": true,
+      "frames": 40,
+      "move_right": true
+    },
+    {
+      "frames": 150,
+      "move_right": true
+    }
+  ],
+  "double_jump:2": [
+    {
+      "x": 530,
+      "move_right": true
+    },
+    {
+      "skill": true,
+      "frames": 50,
+      "move_right": true
+    },
+    {
+      "frames": 170,
+      "move_right": true
+    }
   ]
 }
