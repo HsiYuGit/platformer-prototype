@@ -361,5 +361,43 @@
       "move_right": true,
       "frames": 220
     }
+  ],
+  "glide:0": [
+    {
+      "skill": true,
+      "frames": 320,
+      "move_right": true
+    }
+  ],
+  "glide:1": [
+    {
+      "skill": true,
+      "x": 455,
+      "move_right": true
+    },
+    {
+      "move_right": true,
+      "frames": 18
+    },
+    {
+      "skill": true,
+      "frames": 210,
+      "move_right": true
+    }
+  ],
+  "glide:2": [
+    {
+      "skill": true,
+      "x": 688,
+      "move_right": true
+    },
+    {
+      "land": true
+    },
+    {
+      "skill": true,
+      "frames": 180,
+      "move_right": true
+    }
   ]
 }
