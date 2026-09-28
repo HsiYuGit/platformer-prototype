@@ -462,5 +462,89 @@
       "frames": 170,
       "move_right": true
     }
+  ],
+  "gravity_flip:0": [
+    {
+      "x": 230,
+      "move_right": true
+    },
+    {
+      "frames": 48,
+      "skill": true
+    },
+    {
+      "x": 1000,
+      "move_right": true
+    },
+    {
+      "frames": 48,
+      "skill": true
+    },
+    {
+      "frames": 90,
+      "move_right": true
+    }
+  ],
+  "gravity_flip:1": [
+    {
+      "frames": 48,
+      "skill": true
+    },
+    {
+      "x": 610,
+      "move_right": true
+    },
+    {
+      "frames": 48,
+      "skill": true
+    },
+    {
+      "frames": 170,
+      "move_right": true
+    }
+  ],
+  "gravity_flip:2": [
+    {
+      "x": 245,
+      "move_right": true
+    },
+    {
+      "frames": 48,
+      "skill": true
+    },
+    {
+      "x": 497,
+      "move_right": true
+    },
+    {
+      "skill": true,
+      "frames": 30,
+      "move_right": true
+    },
+    {
+      "land": true
+    },
+    {
+      "x": 705,
+      "move_right": true
+    },
+    {
+      "skill": true,
+      "frames": 34,
+      "move_right": true
+    },
+    {
+      "x": 1025,
+      "move_right": true
+    },
+    {
+      "skill": true,
+      "frames": 40,
+      "move_right": true
+    },
+    {
+      "frames": 80,
+      "move_right": true
+    }
   ]
 }
