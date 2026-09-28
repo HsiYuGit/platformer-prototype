@@ -17,6 +17,7 @@ var failures := 0
 var elapsed := 0.0
 var records: Dictionary = {}
 var status_label: Label
+var timer_label: Label
 var result_label: Label
 var dash_charges_override := 0
 var dash_air_override := -1
@@ -110,11 +111,18 @@ func load_room() -> void:
 	if course.ABILITY != null:
 		player.ability = course.ABILITY.new()
 	world.add_child(player)
+	var footer := ColorRect.new()
+	footer.position = Vector2(0, 644)
+	footer.size = Vector2(1280, 76)
+	footer.color = Color("11171f")
+	footer.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	ui.add_child(footer)
 	label_at("%s  /  %02d  %s" % [course.TITLE, section + 1, spec["name"]], Vector2(40, 22), 28)
 	button_at("Hub [ESC]", Rect2(1090, 24, 150, 38), show_hub)
 	label_at(spec["question"], Vector2(40, 66), 19)
 	label_at(spec["hint"], Vector2(40, 100), 17, Color("f2ca72"))
-	status_label = label_at("", Vector2(40, 658), 17)
+	status_label = label_at("", Vector2(40, 658), 16)
+	timer_label = label_at("", Vector2(605, 659), 14, Color("a4b6c5"))
 	label_at(course.CONTROLS, Vector2(40, 691), 15, Color("a4b6c5"))
 	result_label = label_at("", Vector2(40, 132), 18, Color("77e3a5"))
 	button_at("Retry [R]", Rect2(845, 650, 130, 37), retry)
@@ -183,7 +191,8 @@ func _physics_process(delta: float) -> void:
 		return
 	if not completed:
 		elapsed += delta
-	status_label.text = "%s   |   %.1fs   Retries: %d   CP %d/%d" % [player.skill_status(), elapsed, failures, section + 1, course.rooms().size()]
+	status_label.text = player.skill_status()
+	timer_label.text = "CP %d/%d   %.1fs   Retry %d" % [section + 1, course.rooms().size(), elapsed, failures]
 	if completed:
 		return
 	var bounds := Rect2(player.position - Vector2(14, 14), Vector2(28, 28))

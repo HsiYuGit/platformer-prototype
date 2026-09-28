@@ -7,7 +7,8 @@ func capture(name: String) -> void:
 	await process_frame
 	await process_frame
 	await RenderingServer.frame_post_draw
-	root.get_texture().get_image().save_png("res://output/" + name + ".png")
+	var suffix := "-small" if "small" in OS.get_cmdline_user_args() else ""
+	root.get_texture().get_image().save_png("res://output/" + name + suffix + ".png")
 
 func run() -> void:
 	var lab = preload("res://mechanics_lab.tscn").instantiate()
@@ -15,10 +16,15 @@ func run() -> void:
 	await capture("hub")
 	var courses: Array = [lab.BASELINE] + lab.LEVELS
 	for entry in courses:
-		if OS.get_cmdline_user_args().size() and entry.ID != OS.get_cmdline_user_args()[0]:
+		if OS.get_cmdline_user_args().size() and OS.get_cmdline_user_args()[0] != "small" and entry.ID != OS.get_cmdline_user_args()[0]:
 			continue
 		for index in entry.rooms().size():
 			lab.start_course(entry, index)
 			await capture("%s-%d" % [entry.ID, index + 1])
+	for entry in lab.LEVELS:
+		for index in entry.rooms().size():
+			lab.records["%s:%d" % [entry.ID, index]] = 1.0
+	lab.show_hub()
+	await capture("hub-cleared")
 	print("RENDER PASS")
 	quit()
