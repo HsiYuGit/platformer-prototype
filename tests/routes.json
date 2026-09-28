@@ -185,5 +185,181 @@
       "frames": 170,
       "move_right": true
     }
+  ],
+  "wall_jump:0": [
+    {
+      "move_right": true,
+      "x": 434
+    },
+    {
+      "frames": 15,
+      "jump": true,
+      "move_right": true
+    },
+    {
+      "skill": true,
+      "frames": 18,
+      "move_right": true
+    },
+    {
+      "move_right": true,
+      "x": 434
+    },
+    {
+      "frames": 3,
+      "move_right": true
+    },
+    {
+      "skill": true,
+      "frames": 18,
+      "move_right": true
+    },
+    {
+      "move_right": true,
+      "x": 434
+    },
+    {
+      "frames": 3,
+      "move_right": true
+    },
+    {
+      "skill": true,
+      "frames": 18,
+      "move_right": true
+    },
+    {
+      "move_right": true,
+      "x": 434
+    },
+    {
+      "frames": 3,
+      "move_right": true
+    },
+    {
+      "frames": 220,
+      "move_right": true
+    }
+  ],
+  "wall_jump:1": [
+    {
+      "x": 564,
+      "move_right": true,
+      "jump": true
+    },
+    {
+      "frames": 3,
+      "move_right": true,
+      "jump": true
+    },
+    {
+      "skill": true,
+      "move_left": true,
+      "frames": 20
+    },
+    {
+      "left_x": 446,
+      "move_left": true
+    },
+    {
+      "frames": 3,
+      "move_left": true
+    },
+    {
+      "skill": true,
+      "move_right": true,
+      "frames": 20
+    },
+    {
+      "move_right": true,
+      "x": 564
+    },
+    {
+      "move_right": true,
+      "frames": 3
+    },
+    {
+      "skill": true,
+      "move_right": true,
+      "frames": 18
+    },
+    {
+      "frames": 220,
+      "move_right": true
+    }
+  ],
+  "wall_jump:2": [
+    {
+      "move_right": true,
+      "x": 354
+    },
+    {
+      "frames": 15,
+      "move_right": true,
+      "jump": true
+    },
+    {
+      "skill": true,
+      "move_right": true,
+      "frames": 18
+    },
+    {
+      "move_right": true,
+      "x": 354
+    },
+    {
+      "move_right": true,
+      "frames": 3
+    },
+    {
+      "skill": true,
+      "move_right": true,
+      "frames": 18
+    },
+    {
+      "move_right": true,
+      "x": 408
+    },
+    {
+      "land": true
+    },
+    {
+      "x": 539,
+      "move_right": true,
+      "jump": true
+    },
+    {
+      "move_right": true,
+      "frames": 3
+    },
+    {
+      "skill": true,
+      "move_right": true,
+      "frames": 18
+    },
+    {
+      "move_right": true,
+      "x": 539
+    },
+    {
+      "move_right": true,
+      "frames": 3
+    },
+    {
+      "skill": true,
+      "move_right": true,
+      "frames": 18
+    },
+    {
+      "move_right": true,
+      "x": 539
+    },
+    {
+      "move_right": true,
+      "frames": 3
+    },
+    {
+      "move_right": true,
+      "frames": 220
+    }
   ]
 }
