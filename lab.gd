@@ -3,7 +3,7 @@ extends Node2D
 const PLAYER = preload("res://player.tscn")
 const ROOM = preload("res://room.gd")
 const BASELINE = preload("res://levels/baseline.gd")
-const LEVELS: Array = [preload("res://levels/dash.gd"), preload("res://levels/double_jump.gd"), preload("res://levels/wall_jump.gd"), preload("res://levels/glide.gd")]
+const LEVELS: Array = [preload("res://levels/dash.gd"), preload("res://levels/double_jump.gd"), preload("res://levels/wall_jump.gd"), preload("res://levels/glide.gd"), preload("res://levels/grapple.gd")]
 
 var ui: Control
 var world: Node2D

@@ -399,5 +399,68 @@
       "frames": 180,
       "move_right": true
     }
+  ],
+  "grapple:0": [
+    {
+      "move_right": true,
+      "x": 282
+    },
+    {
+      "skill": true,
+      "frames": 60,
+      "move_right": true
+    },
+    {
+      "frames": 160,
+      "move_right": true
+    }
+  ],
+  "grapple:1": [
+    {
+      "move_right": true,
+      "x": 230
+    },
+    {
+      "skill": true,
+      "frames": 50,
+      "move_right": true
+    },
+    {
+      "frames": 2,
+      "move_right": true
+    },
+    {
+      "skill": true,
+      "frames": 48,
+      "move_right": true
+    },
+    {
+      "frames": 150,
+      "move_right": true
+    }
+  ],
+  "grapple:2": [
+    {
+      "move_right": true,
+      "x": 280
+    },
+    {
+      "skill": true,
+      "frames": 50,
+      "move_right": true
+    },
+    {
+      "frames": 2,
+      "move_right": true
+    },
+    {
+      "skill": true,
+      "frames": 45,
+      "move_right": true
+    },
+    {
+      "frames": 170,
+      "move_right": true
+    }
   ]
 }
